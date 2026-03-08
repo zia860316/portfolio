@@ -592,16 +592,52 @@ footer {
 }
 
 @media (max-width: 900px) {
-  nav { padding: 24px 32px; }
+  nav { padding: 20px 24px; }
+  .nav-logo { height: 24px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 11px; }
   .hero { grid-template-columns: 1fr; }
-  .hero-right { min-height: 50vh; }
-  section { padding: 80px 32px; }
-  .work-grid { grid-template-columns: 1fr; margin: 0 -32px; }
-  .about-grid { grid-template-columns: 1fr; gap: 60px; }
-  .stats-bar { grid-template-columns: 1fr 1fr; padding: 32px; gap: 24px; }
+  .hero-left { padding: 100px 24px 48px; }
+  .hero-right { min-height: 50vh; padding: 48px 24px; }
+  section { padding: 80px 24px; }
+  .work-grid { grid-template-columns: 1fr; margin: 0 -24px; }
+  .work-grid > *:nth-child(odd) { padding-left: 24px; }
+  .work-card { padding: 40px 24px; min-height: 320px; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .stats-bar { grid-template-columns: 1fr 1fr; padding: 24px; gap: 16px; }
   .stat { border-right: none; padding: 0; }
   .section-header { grid-template-columns: 1fr; gap: 16px; }
-  footer { flex-direction: column; gap: 20px; text-align: center; }
+  .section-title { font-size: clamp(32px, 8vw, 56px); }
+  footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+  .contact-links { flex-direction: column; align-items: center; gap: 12px; }
+  .contact-link { width: 100%; max-width: 360px; justify-content: center; padding: 16px 24px; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 16px 20px; }
+  .nav-logo { height: 20px; }
+  .nav-links { gap: 16px; }
+  .hero-left { padding: 88px 20px 40px; }
+  .hero-right { padding: 40px 20px; }
+  .hero-name { font-size: clamp(40px, 10vw, 64px); }
+  section { padding: 64px 20px; }
+  .work-grid { margin: 0 -20px; }
+  .work-card { padding: 32px 20px; }
+  .stats-bar { grid-template-columns: 1fr 1fr; padding: 20px; }
+  .stat-number { font-size: 28px; }
+  .section-title { font-size: clamp(28px, 9vw, 48px); }
+  .about-grid { gap: 40px; }
+  /* Case study inline grids → single column */
+  [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns: 1fr 1.6fr"],
+  [style*="grid-template-columns: 200px 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .contact-link { font-size: 11px; padding: 14px 20px; }
 }
 </style>
 </head>
@@ -1008,8 +1044,8 @@ footer {
   <h2 class="contact-heading reveal">Let's build<br>something <span>great.</span></h2>
   <p class="contact-sub reveal">有新專案想聊，或只是想交流設計？隨時歡迎聯絡。</p>
   <div class="contact-links reveal">
-    <a href="mailto:fuyutsai@gmail.com" class="contact-link primary">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> FUYUTSAI@GMAIL.COM
+    <a href="/cdn-cgi/l/email-protection#b9dfccc0cccdcad8d0f9ded4d8d0d597dad6d4" class="contact-link primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> <span class="__cf_email__" data-cfemail="92d4c7cbc7c6c1d3dbd2d5dfd3dbdebcd1dddf">[email&#160;protected]</span>
     </a>
     <a href="https://iiidesignstudio.webflow.io" target="_blank" class="contact-link">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> III DESIGN STUDIO
@@ -1020,7 +1056,7 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER --><script>
+<!-- FOOTER --><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Cursor
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
